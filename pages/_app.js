@@ -1,7 +1,12 @@
-// import App from 'next/app'
+import Page from "../components/page/Page";
+// import App from "next/app";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <Page>
+      <Component {...pageProps} />
+    </Page>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for
