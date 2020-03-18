@@ -1,5 +1,7 @@
-function Work() {
-  return <div>Work</div>;
+import Work from "../components/work";
+
+function WorkPage() {
+  return <Work />;
 }
 
-export default Work;
+export default WorkPage;

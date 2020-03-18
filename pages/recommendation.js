@@ -1,5 +1,7 @@
-function Recommendation() {
-  return <div>Recommendation</div>;
+import Recommendation from "../components/recommendation";
+
+function RecommendationPage() {
+  return <Recommendation />;
 }
 
-export default Recommendation;
+export default RecommendationPage;

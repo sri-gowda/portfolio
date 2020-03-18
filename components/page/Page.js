@@ -1,56 +1,30 @@
 import React, { Component } from "react";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import { ThemeProvider } from "styled-components";
+import GlobalStyle, { theme } from "../../constants/GlobalStyle";
+import { StyledPage, Container, Inner, Bubbles } from "./styles";
 import Header from "../header/Header";
 import Meta from "../meta/Meta";
 
-const theme = {
-  red: "#FF0000",
-  black: "#393939",
-  grey: "#3A3A3A",
-  lightgrey: "#E1E1E1",
-  offWhite: "#EDEDED",
-  maxWidth: "1000px",
-  bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
+const bubbleConfig = {
+  bubbleone: {
+    height: 1000,
+    width: 1000,
+    top: -550,
+    right: -400
+  },
+  bubbleTwo: {
+    height: 314,
+    width: 314,
+    bottom: 0,
+    left: 0
+  },
+  bubbleThree: {
+    height: 300,
+    width: 300,
+    bottom: -100,
+    right: -150
+  }
 };
-
-const StyledPage = styled.div`
-  background: white;
-  color: ${props => props.theme.black};
-`;
-
-const Inner = styled.div`
-  max-width: ${props => props.theme.maxWidth};
-  margin: 0 auto;
-  padding: 2rem;
-`;
-
-const GlobalStyle = createGlobalStyle`
-@font-face {
-    font-family: 'radnika_next';
-    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-  html {
-    box-sizing: border-box;
-    font-size: 10px;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  body {
-    padding: 0;
-    margin: 0;
-    font-size: 1.5rem;
-    line-height: 2;
-    font-family: 'radnika_next';
-  }
-  a {
-    text-decoration: none;
-    color: ${theme.black};
-  }
-  button {  font-family: 'radnika_next'; }
-`;
 
 class Page extends Component {
   render() {
@@ -58,8 +32,13 @@ class Page extends Component {
       <ThemeProvider theme={theme}>
         <StyledPage>
           <Meta />
+          <Bubbles bubble={bubbleConfig.bubbleone} />
+          <Bubbles bubble={bubbleConfig.bubbleTwo} />
+          <Bubbles bubble={bubbleConfig.bubbleThree} />
           <Header />
-          <Inner>{this.props.children}</Inner>
+          <Container>
+            <Inner>{this.props.children}</Inner>
+          </Container>
         </StyledPage>
         <GlobalStyle />
       </ThemeProvider>

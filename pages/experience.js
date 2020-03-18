@@ -1,5 +1,6 @@
-function Experience() {
-  return <div>Experience</div>;
+import Experience from "../components/experience";
+function ExperiencePage() {
+  return <Experience />;
 }
 
-export default Experience;
+export default ExperiencePage;

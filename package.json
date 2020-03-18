@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 7777",
     "build": "next build",
     "start": "next start"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
     "next": "^9.3.0",
     "nprogress": "^0.2.0",
     "react": "^16.13.0",
