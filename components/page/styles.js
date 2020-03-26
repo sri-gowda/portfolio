@@ -15,6 +15,7 @@ export const Inner = styled.div`
 export const Container = styled.div`
   @media (min-width: 400px) {
     padding: 0 100px;
+    position: relative;
   }
 `;
 
@@ -23,6 +24,7 @@ export const Container2 = styled.div`
   background: #fff;
   z-index: 1;
   border-radius: 5px;
+  overflow: hidden;
 `;
 
 export const Bubbles = styled.div`

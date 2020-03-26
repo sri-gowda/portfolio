@@ -40,6 +40,7 @@ class Page extends Component {
             <Inner>{this.props.children}</Inner>
           </Container>
         </StyledPage>
+
         <GlobalStyle />
       </ThemeProvider>
     );
