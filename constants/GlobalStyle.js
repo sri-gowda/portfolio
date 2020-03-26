@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: ${theme.black};
   }
+  
   button {   font-family: "Montserrat", sans-serif; }
 `;
 
