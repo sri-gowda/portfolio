@@ -6,6 +6,7 @@ export const NavStyles = styled.ul`
   display: flex;
   width: 100%;
   justify-content: center;
+
   a,
   button {
     padding: 1rem 3rem;
@@ -25,17 +26,7 @@ export const NavStyles = styled.ul`
       font-size: 10px;
       padding: 0 10px;
     }
-    &:before {
-      content: "";
-      width: 2px;
-      background: ${props => props.theme.lightgrey};
-      height: 100%;
-      left: 0;
-      position: absolute;
-      transform: skew(-20deg);
-      top: 0;
-      bottom: 0;
-    }
+
     &:after {
       height: 4px;
       background: #fff;
@@ -50,10 +41,11 @@ export const NavStyles = styled.ul`
       margin-top: 2rem;
     }
     &:hover,
+    &.active,
     &:focus {
       outline: none;
       &:after {
-        width: calc(100% - 60px);
+        width: calc(100% - 80px);
       }
     }
   }

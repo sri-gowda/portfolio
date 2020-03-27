@@ -111,7 +111,7 @@ const Contact = () => {
             />
           </InputGroup>
           <InputGroup>
-            <label>Messsage</label>
+            <label>Message</label>
             <TextArea
               type="text"
               onChange={e => setMessage(e.target.value)}
