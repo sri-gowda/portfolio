@@ -1,7 +1,7 @@
 import WelcomeText from "./WelcomeText";
 
 const About = () => {
-  return <WelcomeText />;
+  return <WelcomeText /> 
 };
 
 export default About;

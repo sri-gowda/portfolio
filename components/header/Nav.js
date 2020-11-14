@@ -36,11 +36,8 @@ const Nav = () => {
     <NavStyles data-test="nav">
       {navs.map((nav, index) => {
         return (
-          <Link href={nav.url} key={nav.url}>
-            <a
-              className={route.pathname === nav.url ? "active" : ""}
-              onClick={() => setSelectedIndex(index)}
-            >
+          <Link href={nav.url} key={nav.url + index}>
+            <a className={route.pathname === nav.url ? "active" : ""}>
               {nav.name}
             </a>
           </Link>
