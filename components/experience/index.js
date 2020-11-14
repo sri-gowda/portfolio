@@ -10,14 +10,10 @@ import {
 } from "./styles";
 import appConfig from "../../constants/config";
 import { theme } from "../../constants/GlobalStyle";
-import Digio from "../../static/digio.svg";
-import Billtrim from "../../static/billtrim.svg";
-import Indianiti from "../../static/indianiti.svg";
-import Entoss from "../../static/entoss.svg";
 
 const Experience = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-
+  let selectedObj = appConfig.experience.companiesNRoles[selectedIndex];
   return (
     <Container2>
       <div
@@ -49,7 +45,11 @@ const Experience = () => {
         </div>
         <CompanyDesc>
           <Card>
-            <Digio />
+            <img
+              src={selectedObj.logo}
+              alt="company logo"
+              style={{ height: "60px" }}
+            />
             <div
               style={{
                 display: "flex",
@@ -57,57 +57,30 @@ const Experience = () => {
                 justifyContent: "space-between"
               }}
             >
-              <div>Sep 2019</div>
-              <div>Present</div>
+              <div>{selectedObj.startDate}</div>
+              <div>{selectedObj.endDate}</div>
             </div>
           </Card>
           <br />
-          <Card>
-            <h5>Project Description</h5>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with including
-              versions of Lorem Ipsum.
-            </p>
+          {selectedObj.projects.map(item => {
+            return (
+              <Card key={item.name}>
+                <h5>{item.name}</h5>
+                <p>Description</p>
+                <p>{item.description}</p>
 
-            <h5>Role</h5>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with including
-              versions of Lorem Ipsum.
-            </p>
+                <h5>Role</h5>
+                <p>{item.myRole}</p>
 
-            <h5>Features</h5>
-            <ul>
-              <li>
-                type and scrambled it to make a type specimen book. It has
-              </li>
-              <li>
-                type and scrambled it to make a type specimen book. It has
-              </li>
-              <li>
-                type and scrambled it to make a type specimen book. It has
-              </li>
-              <li>
-                type and scrambled it to make a type specimen book. It has
-              </li>
-              <li>
-                type and scrambled it to make a type specimen book. It has
-              </li>
-            </ul>
-          </Card>
+                <h5>Features</h5>
+                <ul>
+                  {item.features.map((feature, i) => {
+                    return <li key={i + "features"}>{feature}</li>;
+                  })}
+                </ul>
+              </Card>
+            );
+          })}
         </CompanyDesc>
       </div>
     </Container2>
